@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testimonios &#x2014; Israel Paketh</title>
-  <meta name="description" content="Reviews y testimonios de clientes de Israel Paketh en Buenos Aires.">
-  <link rel="canonical" href="https://bayouwebstudio.github.io/tattoosbypaketh/testimonials.html">
-  <meta property="og:title" content="Testimonios &#x2014; Israel Paketh">
+  <title>Testimonios — Israel Paketh</title>
+  <meta name="description" content="Reviews y testimonios de clientes de Israel Paketh. Comparte tu experiencia.">
+  <link rel="canonical" href="https://tattoosbypaketh.com/testimonials.html">
+  <meta property="og:title" content="Testimonios — Israel Paketh">
   <meta property="og:image" content="https://raw.githubusercontent.com/BayouWebStudio/tattoosbypaketh/main/img/1.jpg">
-  <meta property="og:url" content="https://bayouwebstudio.github.io/tattoosbypaketh/testimonials.html">
+  <meta property="og:url" content="https://tattoosbypaketh.com/testimonials.html">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    
     :root {
       --black: #050508;
       --charcoal: #0f0f14;
@@ -33,7 +32,6 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -44,46 +42,22 @@
     }
     .nav-logo {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--white);
-      text-decoration: none;
+      font-size: 1.3rem; font-weight: 400; letter-spacing: 0.1em;
+      color: var(--white); text-decoration: none;
     }
     .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-    .nav-links a {
-      color: var(--dim);
-      text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--dim); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .lang-toggle {
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--dim);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 6px 12px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    .lang-toggle { background: none; border: 1px solid var(--border); color: var(--dim); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; cursor: pointer; transition: all 0.2s; }
     .lang-toggle:hover { border-color: var(--gold); color: var(--gold); }
     .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 1px; background: var(--white); margin: 5px 0; transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
-    .mobile-menu {
-      display: none; position: fixed; top: 65px; left: 0; right: 0; z-index: 99;
-      background: var(--charcoal); padding: 24px 48px; border-bottom: 1px solid var(--border);
-    }
+    .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; z-index: 99; background: var(--charcoal); padding: 24px 48px; border-bottom: 1px solid var(--border); }
     .mobile-menu.open { display: block; }
     .mobile-menu a { display: block; color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0; border-bottom: 1px solid var(--border); }
-    /* FLOATING BOOK */
     .book-float {
       position: fixed; bottom: 32px; right: 32px; z-index: 200;
       background: var(--gold); color: #000;
@@ -94,10 +68,8 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .book-float:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(192,192,192,0.5); }
-    /* FADE-UP ANIMATIONS */
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-    /* FOOTER */
     footer {
       background: var(--charcoal); padding: 48px 72px;
       border-top: 1px solid var(--border);
@@ -108,43 +80,39 @@
     .footer-links a { color: var(--dim); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
     .footer-copy { color: var(--dim); font-size: 0.72rem; }
-    /* SHARED */
     .section-label { font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 400; line-height: 1.1; margin-bottom: 24px;
-    }
-    .btn-gold {
-      display: inline-block; background: var(--gold); color: #000;
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em;
-      text-transform: uppercase; padding: 16px 40px;
-      transition: opacity 0.2s;
-    }
-    .btn-gold:hover { opacity: 0.88; }
-    .btn-outline {
-      display: inline-block; border: 1px solid var(--border); color: var(--white);
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em;
-      text-transform: uppercase; padding: 14px 36px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    /* MOBILE */
-    @media (max-width: 900px) {
-      nav { padding: 18px 24px; } .nav-links { display: none; } .hamburger { display: block; }
-      footer { flex-direction: column; gap: 24px; padding: 40px 24px; text-align: center; }
-    }
-    @media (max-width: 600px) {
-      footer { padding: 32px 20px; }
-    }
-  
+
+    /* PAGE */
     .page-hero { padding: 140px 72px 64px; background: var(--charcoal); border-bottom: 1px solid var(--border); }
     .page-eyebrow { font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
     h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 1; }
+    h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.1; margin-bottom: 24px; }
+
     .testimonials-body { padding: 96px 72px; max-width: 900px; margin: 0 auto; }
-    .placeholder-block { border: 1px solid var(--border); padding: 60px; text-align: center; margin-bottom: 72px; }
-    .placeholder-block p { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-style: italic; color: var(--dim); margin-bottom: 8px; }
-    .placeholder-block small { color: var(--dim); font-size: 0.75rem; letter-spacing: 0.08em; }
+
+    /* TESTIMONIAL CARDS */
+    .testimonials-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 72px; }
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 32px;
+      transition: border-color 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(192,192,192,0.25); }
+    .testimonial-stars { color: #FFD700; font-size: 1.1rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testimonial-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem; font-style: italic; color: rgba(245,245,240,0.85);
+      line-height: 1.7; margin-bottom: 16px;
+    }
+    .testimonial-author { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+
+    .empty-state {
+      border: 1px solid var(--border); padding: 60px; text-align: center; margin-bottom: 72px;
+    }
+    .empty-state p { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-style: italic; color: var(--dim); margin-bottom: 8px; }
+    .empty-state small { color: var(--dim); font-size: 0.75rem; letter-spacing: 0.08em; }
+
+    /* FORM */
     .share-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; font-weight: 300; margin-bottom: 12px; }
     .share-section > p { color: var(--dim); margin-bottom: 40px; font-size: 0.92rem; }
     .form-group { margin-bottom: 24px; }
@@ -156,30 +124,54 @@
     }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
     .form-group textarea { resize: vertical; min-height: 120px; }
-    .btn-submit { background: var(--gold); color: #000; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 40px; font-weight: 500; transition: opacity 0.2s; }
+
+    /* STAR RATING */
+    .star-rating { display: flex; gap: 8px; margin-top: 4px; }
+    .star-rating .star {
+      font-size: 1.8rem; cursor: pointer; color: var(--border);
+      transition: color 0.15s, transform 0.15s;
+      user-select: none;
+    }
+    .star-rating .star:hover, .star-rating .star.active { color: #FFD700; transform: scale(1.15); }
+
+    .btn-submit {
+      background: var(--gold); color: #000; border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; padding: 16px 40px; font-weight: 500;
+      transition: opacity 0.2s;
+    }
     .btn-submit:hover { opacity: 0.88; }
+    .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .success-msg {
+      display: none; background: rgba(192,192,192,0.08); border: 1px solid rgba(192,192,192,0.2);
+      padding: 24px; text-align: center; margin-top: 24px;
+    }
+    .success-msg p { color: var(--gold); font-size: 1rem; margin-bottom: 4px; }
+    .success-msg small { color: var(--dim); font-size: 0.8rem; }
+
+    .loading-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 8px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     @media (max-width: 900px) {
+      nav { padding: 18px 24px; } .nav-links { display: none; } .hamburger { display: block; }
       .page-hero { padding: 120px 24px 48px; }
       .testimonials-body { padding: 60px 24px; }
-      .placeholder-block { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 24px; padding: 40px 24px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  
+
   <nav>
     <a href="./index.html" class="nav-logo">Israel Paketh</a>
     <ul class="nav-links">
-      <li><a href="./index.html" 
-        data-en="Inicio" data-es="Inicio">Inicio</a></li>
-      <li><a href="./about.html" 
-        data-en="About" data-es="Sobre M&#xed;">Sobre M&#xed;</a></li>
-      <li><a href="./jewelry.html">Joyería</a></li><li><a href="./tattoos.html" 
-        data-en="Tattoos" data-es="Tatuajes">Tatuajes</a></li>
-      <li><a href="./booking.html" 
-        data-en="Booking" data-es="Reservaciones">Reservaciones</a></li>
-      <li><a href="./testimonials.html" class="active"
-        data-en="Reviews" data-es="Testimonios">Testimonios</a></li>
+      <li><a href="./index.html" data-en="Home" data-es="Inicio">Inicio</a></li>
+      <li><a href="./about.html" data-en="About" data-es="Sobre Mí">Sobre Mí</a></li>
+      <li><a href="./jewelry.html">Joyería</a></li>
+      <li><a href="./tattoos.html" data-en="Tattoos" data-es="Tatuajes">Tatuajes</a></li>
+      <li><a href="./booking.html" data-en="Booking" data-es="Reservaciones">Reservaciones</a></li>
+      <li><a href="./testimonials.html" class="active" data-en="Reviews" data-es="Testimonios">Testimonios</a></li>
       <li><button class="lang-toggle" onclick="toggleLang()">EN</button></li>
     </ul>
     <button class="hamburger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.mobile-menu').classList.toggle('open')">
@@ -188,8 +180,9 @@
   </nav>
   <div class="mobile-menu">
     <a href="./index.html" data-en="Home" data-es="Inicio">Inicio</a>
-    <a href="./about.html" data-en="About" data-es="Sobre M&#xed;">Sobre M&#xed;</a>
-    <a href="./jewelry.html">Joyería</a></li><li><a href="./tattoos.html" data-en="Tattoos" data-es="Tatuajes">Tatuajes</a>
+    <a href="./about.html" data-en="About" data-es="Sobre Mí">Sobre Mí</a>
+    <a href="./jewelry.html">Joyería</a>
+    <a href="./tattoos.html" data-en="Tattoos" data-es="Tatuajes">Tatuajes</a>
     <a href="./booking.html" data-en="Booking" data-es="Reservaciones">Reservaciones</a>
     <a href="./testimonials.html" data-en="Reviews" data-es="Testimonios">Testimonios</a>
   </div>
@@ -201,79 +194,160 @@
   </section>
 
   <div class="testimonials-body">
-    <div class="placeholder-block fade-up">
-      <p data-en="Be the first to share your experience." data-es="S&#xe9; el primero en compartir tu experiencia.">S&#xe9; el primero en compartir tu experiencia.</p>
-      <small data-en="Use the form below &#x2193;" data-es="Usa el formulario de abajo &#x2193;">Usa el formulario de abajo &#x2193;</small>
+    <!-- Approved testimonials load here -->
+    <div id="testimonials-list" class="testimonials-grid">
+      <div style="text-align:center;padding:40px 0;">
+        <div class="loading-spinner"></div>
+        <span style="color:var(--dim);font-size:0.85rem;" data-en="Loading reviews..." data-es="Cargando testimonios...">Cargando testimonios...</span>
+      </div>
     </div>
 
+    <!-- Submit form -->
     <div class="share-section fade-up">
       <h2 data-en="Share Your Experience" data-es="Comparte tu Experiencia">Comparte tu Experiencia</h2>
-      <p data-en="Got tattooed by Israel Paketh? We'd love to hear your story." data-es="&#xbf;Te tatu&#xf3; Israel Paketh? Nos encantar&#xed;a escuchar tu historia.">&#xbf;Te tatu&#xf3; Israel Paketh? Nos encantar&#xed;a escuchar tu historia.</p>
-      <form onsubmit="submitTestimonial(event)">
+      <p data-en="Got tattooed by Israel Paketh? We'd love to hear your story." data-es="¿Te tatuó Israel Paketh? Nos encantaría escuchar tu historia.">¿Te tatuó Israel Paketh? Nos encantaría escuchar tu historia.</p>
+
+      <form id="testimonial-form" onsubmit="submitTestimonial(event)">
         <div class="form-group">
           <label data-en="Your Name" data-es="Tu Nombre">Tu Nombre</label>
           <input type="text" id="t-name" required placeholder="Tu nombre">
         </div>
         <div class="form-group">
-          <label data-en="Your Experience" data-es="Tu Experiencia">Tu Experiencia</label>
-          <textarea id="t-body" rows="5" required placeholder="Cu&#xe9;ntanos sobre tu experiencia..."></textarea>
+          <label data-en="Rating" data-es="Calificación">Calificación</label>
+          <div class="star-rating" id="star-rating">
+            <span class="star" data-value="1" onclick="setRating(1)">★</span>
+            <span class="star" data-value="2" onclick="setRating(2)">★</span>
+            <span class="star" data-value="3" onclick="setRating(3)">★</span>
+            <span class="star" data-value="4" onclick="setRating(4)">★</span>
+            <span class="star" data-value="5" onclick="setRating(5)">★</span>
+          </div>
         </div>
         <div class="form-group">
-          <label>Instagram (opcional)</label>
-          <input type="text" id="t-ig" placeholder="@handle">
+          <label data-en="Your Experience" data-es="Tu Experiencia">Tu Experiencia</label>
+          <textarea id="t-body" rows="5" required placeholder="Cuéntanos sobre tu experiencia..."></textarea>
         </div>
-        <button type="submit" class="btn-submit" data-en="Submit" data-es="Enviar">Enviar</button>
-        <p id="t-success" style="display:none;color:var(--gold);margin-top:16px;" data-en="Thank you! Your testimonial has been sent." data-es="&#xa1;Gracias! Tu testimonio ha sido enviado.">&#xa1;Gracias! Tu testimonio ha sido enviado.</p>
+        <button type="submit" class="btn-submit" id="submit-btn" data-en="Submit Review" data-es="Enviar Testimonio">Enviar Testimonio</button>
       </form>
-      <script>
-      function submitTestimonial(e) {
-        e.preventDefault();
-        const name = document.getElementById('t-name').value;
-        const body = document.getElementById('t-body').value;
-        const ig = document.getElementById('t-ig').value;
-        const to = "hello@tattoosbypaketh.com";
-        const sub = encodeURIComponent("Nuevo testimonio - " + name);
-        const msg = encodeURIComponent("Name: " + name + "
-Instagram: " + ig + "
 
-" + body);
-        window.location.href = "mailto:" + to + "?subject=" + sub + "&body=" + msg;
-        document.getElementById('t-success').style.display = 'block';
-      }
-      </script>
+      <div class="success-msg" id="success-msg">
+        <p data-en="✓ Thank you! Your review has been submitted." data-es="✓ ¡Gracias! Tu testimonio ha sido enviado.">✓ ¡Gracias! Tu testimonio ha sido enviado.</p>
+        <small data-en="It will appear here once approved." data-es="Aparecerá aquí una vez aprobado.">Aparecerá aquí una vez aprobado.</small>
+      </div>
     </div>
   </div>
 
-  
   <footer>
     <div class="footer-logo">Israel Paketh</div>
     <div class="footer-links">
       <a href="./index.html">Inicio</a>
-      <a href="./about.html">Sobre M&#xed;</a>
-      <a href="./jewelry.html">Joyería</a></li><li><a href="./tattoos.html">Tatuajes</a>
+      <a href="./about.html">Sobre Mí</a>
+      <a href="./jewelry.html">Joyería</a>
+      <a href="./tattoos.html">Tatuajes</a>
       <a href="./booking.html">Reservaciones</a>
       <a href="https://www.instagram.com/tattoosbypaketh" target="_blank" rel="noopener">Instagram</a>
-      
     </div>
-    <div class="footer-copy">&#xa9; 2026 Israel Paketh</div>
+    <div class="footer-copy">© 2026 Israel Paketh</div>
   </footer>
-  
+
   <script>
-    const LANG = { default: 'es', current: 'es' };
+    const CONVEX_URL = 'https://curious-lemming-262.convex.site';
+    const SITE_SLUG = 'tattoosbypaketh';
+    let selectedRating = 5;
+
+    // Star rating
+    function setRating(n) {
+      selectedRating = n;
+      document.querySelectorAll('#star-rating .star').forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.value) <= n);
+      });
+    }
+    setRating(5); // default
+
+    // Load approved testimonials
+    async function loadTestimonials() {
+      const container = document.getElementById('testimonials-list');
+      try {
+        const res = await fetch(CONVEX_URL + '/api/testimonials/approved?slug=' + SITE_SLUG);
+        const data = await res.json();
+        if (!data.testimonials || data.testimonials.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state fade-up visible">
+              <p data-en="Be the first to share your experience." data-es="Sé el primero en compartir tu experiencia.">Sé el primero en compartir tu experiencia.</p>
+              <small data-en="Use the form below ↓" data-es="Usa el formulario de abajo ↓">Usa el formulario de abajo ↓</small>
+            </div>`;
+          return;
+        }
+        container.innerHTML = data.testimonials.map(t => `
+          <div class="testimonial-card fade-up visible">
+            <div class="testimonial-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+            <p class="testimonial-text">"${escHtml(t.reviewText)}"</p>
+            <span class="testimonial-author">— ${escHtml(t.name)}</span>
+          </div>
+        `).join('');
+      } catch (e) {
+        container.innerHTML = `
+          <div class="empty-state fade-up visible">
+            <p data-en="Be the first to share your experience." data-es="Sé el primero en compartir tu experiencia.">Sé el primero en compartir tu experiencia.</p>
+            <small data-en="Use the form below ↓" data-es="Usa el formulario de abajo ↓">Usa el formulario de abajo ↓</small>
+          </div>`;
+      }
+    }
+
+    function escHtml(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    // Submit testimonial
+    async function submitTestimonial(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading-spinner"></span> Enviando...';
+
+      const name = document.getElementById('t-name').value.trim();
+      const reviewText = document.getElementById('t-body').value.trim();
+
+      try {
+        const res = await fetch(CONVEX_URL + '/api/testimonials/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: SITE_SLUG, name, rating: selectedRating, reviewText }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          document.getElementById('testimonial-form').style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+        } else {
+          alert(data.error || 'Error submitting review');
+          btn.disabled = false;
+          btn.textContent = 'Enviar Testimonio';
+        }
+      } catch (err) {
+        alert('Network error — please try again');
+        btn.disabled = false;
+        btn.textContent = 'Enviar Testimonio';
+      }
+    }
+
+    // Language toggle
+    const LANG = { current: 'es' };
     function toggleLang() {
       LANG.current = LANG.current === 'es' ? 'en' : 'es';
       document.querySelectorAll('[data-es][data-en]').forEach(el => {
         el.textContent = el.getAttribute('data-' + LANG.current) || el.textContent;
       });
-      document.querySelectorAll('[data-es-href][data-en-href]').forEach(el => {
-        el.setAttribute('href', el.getAttribute('data-' + LANG.current + '-href') || el.getAttribute('href'));
-      });
     }
+
     // Fade-up on scroll
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    // Init
+    loadTestimonials();
   </script>
 </body>
 </html>
