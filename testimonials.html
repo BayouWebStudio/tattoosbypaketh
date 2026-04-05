@@ -163,6 +163,13 @@
       .testimonials-body { padding: 60px 24px; }
       .placeholder-block { padding: 40px 24px; }
     }
+  
+    .reviews-grid { display: grid; gap: 24px; margin-bottom: 72px; }
+    .review-card { border: 1px solid var(--border); padding: 32px; background: var(--charcoal); }
+    .review-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 12px; }
+    .review-text { color: var(--white); font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { color: var(--dim); font-size: 0.8rem; letter-spacing: 0.08em; }
+    .review-date { color: var(--dim); font-size: 0.7rem; margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -201,7 +208,8 @@
   </section>
 
   <div class="testimonials-body">
-    <div class="placeholder-block fade-up">
+    <div id="reviews-grid" class="reviews-grid"></div>
+    <div id="placeholder-block" class="placeholder-block fade-up">
       <p data-en="Be the first to share your experience." data-es="S&#xe9; el primero en compartir tu experiencia.">S&#xe9; el primero en compartir tu experiencia.</p>
       <small data-en="Use the form below &#x2193;" data-es="Usa el formulario de abajo &#x2193;">Usa el formulario de abajo &#x2193;</small>
     </div>
@@ -288,6 +296,33 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+<script>
+  (function(){
+    var slug = 'tattoosbypaketh';
+    fetch('https://curious-lemming-262.convex.site/api/testimonials/approved?slug=' + slug)
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var reviews = data.testimonials || [];
+        if(!reviews.length) return;
+        document.getElementById('placeholder-block').style.display = 'none';
+        var grid = document.getElementById('reviews-grid');
+        reviews.forEach(function(r){
+          var stars = '';
+          for(var i=0;i<(r.rating||5);i++) stars += '★ ';
+          var d = new Date(r.createdAt);
+          var dateStr = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+          var card = document.createElement('div');
+          card.className = 'review-card fade-up visible';
+          card.innerHTML = '<div class="review-stars">'+stars+'</div>'
+            + '<p class="review-text">"'+r.reviewText.replace(/</g,'&lt;')+'"</p>'
+            + '<p class="review-author">— '+r.name.replace(/</g,'&lt;')+'</p>'
+            + '<p class="review-date">'+dateStr+'</p>';
+          grid.appendChild(card);
+        });
+      })
+      .catch(function(){});
+  })();
   </script>
 </body>
 </html>
