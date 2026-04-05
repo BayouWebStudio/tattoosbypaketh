@@ -226,19 +226,33 @@
         <p id="t-success" style="display:none;color:var(--gold);margin-top:16px;" data-en="Thank you! Your testimonial has been sent." data-es="&#xa1;Gracias! Tu testimonio ha sido enviado.">&#xa1;Gracias! Tu testimonio ha sido enviado.</p>
       </form>
       <script>
-      function submitTestimonial(e) {
+      async function submitTestimonial(e) {
         e.preventDefault();
-        const name = document.getElementById('t-name').value;
-        const body = document.getElementById('t-body').value;
-        const ig = document.getElementById('t-ig').value;
-        const to = "hello@tattoosbypaketh.com";
-        const sub = encodeURIComponent("Nuevo testimonio - " + name);
-        const msg = encodeURIComponent("Name: " + name + "
-Instagram: " + ig + "
-
-" + body);
-        window.location.href = "mailto:" + to + "?subject=" + sub + "&body=" + msg;
-        document.getElementById('t-success').style.display = 'block';
+        var btn = e.target.querySelector('button[type="submit"]') || e.target.querySelector('.btn-submit');
+        var origText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        try {
+          var name = document.getElementById('t-name').value.trim();
+          var body = document.getElementById('t-body').value.trim();
+          var rating = 5;
+          var ratingEl = document.querySelector('input[name="rating"]:checked') || document.getElementById('rating');
+          if (ratingEl) rating = parseInt(ratingEl.value) || 5;
+          if (!name || !body) { alert('Please fill in your name and review.'); btn.disabled = false; btn.textContent = origText; return; }
+          var res = await fetch('https://curious-lemming-262.convex.site/api/testimonials/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slug: 'tattoosbypaketh', name: name, rating: rating, reviewText: body })
+          });
+          if (!res.ok) throw new Error('Network error');
+          e.target.reset();
+          btn.textContent = '\u2713 Thank you!';
+          setTimeout(function() { btn.textContent = origText; btn.disabled = false; }, 3000);
+        } catch(err) {
+          alert('Something went wrong. Please try again.');
+          btn.textContent = origText;
+          btn.disabled = false;
+        }
       }
       </script>
     </div>
