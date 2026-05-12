@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="sunset">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     
     :root {
@@ -43,7 +43,7 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.3rem;
       font-weight: 400;
       letter-spacing: 0.1em;
@@ -103,7 +103,7 @@
       border-top: 1px solid var(--border);
       display: flex; justify-content: space-between; align-items: center;
     }
-    .footer-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; color: var(--dim); }
+    .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; color: var(--dim); }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { color: var(--dim); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
@@ -111,7 +111,7 @@
     /* SHARED */
     .section-label { font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
     h2 {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 400; line-height: 1.1; margin-bottom: 24px;
     }
@@ -140,12 +140,12 @@
   
     .page-hero { padding: 140px 72px 64px; background: var(--charcoal); border-bottom: 1px solid var(--border); }
     .page-eyebrow { font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 1; }
+    h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 1; }
     .testimonials-body { padding: 96px 72px; max-width: 900px; margin: 0 auto; }
     .placeholder-block { border: 1px solid var(--border); padding: 60px; text-align: center; margin-bottom: 72px; }
-    .placeholder-block p { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-style: italic; color: var(--dim); margin-bottom: 8px; }
+    .placeholder-block p { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; font-style: italic; color: var(--dim); margin-bottom: 8px; }
     .placeholder-block small { color: var(--dim); font-size: 0.75rem; letter-spacing: 0.08em; }
-    .share-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; font-weight: 300; margin-bottom: 12px; }
+    .share-section h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; font-weight: 300; margin-bottom: 12px; }
     .share-section > p { color: var(--dim); margin-bottom: 40px; font-size: 0.92rem; }
     .form-group { margin-bottom: 24px; }
     .form-group label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); margin-bottom: 8px; }
@@ -173,6 +173,94 @@
     .review-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); flex-shrink: 0; }
     .review-date { color: var(--dim); font-size: 0.7rem; margin-top: 4px; }
   </style>
+<!-- dashboard-animations-start -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer data-dashboard-anim="statsCounter,heroParallax,scrollProgress,fadeUp">
+window.addEventListener('load', function() {
+(function() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  try {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade-up on scroll — sections gently slide up and fade in.
+    // IMPORTANT: skip elements already in view on page load (gsap.from would
+    // hide them and the scroll trigger wouldn't fire because we're past it).
+    // Also narrowly target content sections only, NOT hero/nav/footer wrappers.
+    var faded = document.querySelectorAll('.fade-up, .section-title, .section-label, .about-preview, .gallery-cta-wrap, .testimonials-preview, .booking-preview, .testimonial-placeholder, .service-card, .style-card');
+    faded.forEach(function(el) {
+      if (el.dataset.dashFaded === '1') return;
+      el.dataset.dashFaded = '1';
+      var rect = el.getBoundingClientRect();
+      var alreadyVisible = rect.top < window.innerHeight * 0.95 && rect.bottom > 0;
+      if (alreadyVisible) {
+        // Already on screen — play once, no scroll trigger (so it can never stay hidden)
+        gsap.from(el, { y: 20, autoAlpha: 0, duration: 0.7, ease: 'power2.out' });
+      } else {
+        gsap.from(el, {
+          y: 28, autoAlpha: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none', once: true }
+        });
+      }
+    });
+
+    // Stats counter — animate numbers like "297K", "12", "5+" from 0 to target when in view
+    document.querySelectorAll('.stat-num, .stat-number, [data-count]').forEach(function(el) {
+      var text = (el.textContent || '').trim();
+      var m = text.match(/^([\d.,]+)\s*([a-zA-Z+%]*)\s*$/);
+      if (!m) return;
+      var raw = m[1].replace(/,/g, '');
+      var num = parseFloat(raw);
+      if (isNaN(num) || num <= 0) return;
+      var suffix = m[2] || '';
+      var hasDecimal = raw.indexOf('.') !== -1;
+      var obj = { val: 0 };
+      gsap.to(obj, {
+        val: num,
+        duration: 1.6,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
+        onUpdate: function() {
+          el.textContent = (hasDecimal ? obj.val.toFixed(1) : Math.round(obj.val)) + suffix;
+        }
+      });
+    });
+
+    // Hero parallax — hero section moves slower than scroll
+    (function() {
+      var hero = document.querySelector('.hero, [class*="hero-"], header.hero, section.hero');
+      if (!hero) return;
+      gsap.to(hero, {
+        yPercent: 8,
+        ease: 'none',
+        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.6 }
+      });
+    })();
+
+    // Scroll progress bar at the very top of the page
+    (function() {
+      var bar = document.createElement('div');
+      bar.setAttribute('data-dashboard-anim', 'progress');
+      bar.style.cssText = 'position:fixed;top:0;left:0;right:0;height:2px;background:var(--gold,var(--accent,#c9a84c));z-index:9999;transform-origin:left center;transform:scaleX(0);pointer-events:none;';
+      document.body.appendChild(bar);
+      gsap.to(bar, {
+        scaleX: 1, ease: 'none',
+        scrollTrigger: { trigger: document.documentElement, start: 'top top', end: 'bottom bottom', scrub: 0.2 }
+      });
+    })();
+  } catch (e) { /* animation failure must never break the site */ }
+})();
+});
+</script>
+<!-- dashboard-animations-end -->
+
+<style data-dashboard-style="1">
+  html { font-size: 18px !important; }
+  .btn-gold, .btn-outline, .book-btn, .hero-cta, .btn, button.cta, a.cta,
+  .float-book, .lang-toggle, input[type="submit"], input[type="button"] {
+    border-radius: 9999px !important;
+  }
+</style>
 </head>
 <body>
   
