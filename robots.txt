@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tattoosbypaketh.com/sitemap.xml
